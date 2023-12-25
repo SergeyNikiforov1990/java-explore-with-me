@@ -10,6 +10,7 @@ import java.util.List;
 @UtilityClass
 public class CompilationMapper {
     public Compilation toCompilation(NewCompilationDto newCompilationDto, List<Event> events) {
+    public static Compilation toCompilation(NewCompilationDto newCompilationDto, List<Event> events) {
         return Compilation.builder()
                 .pinned(newCompilationDto.getPinned())
                 .title(newCompilationDto.getTitle())
@@ -19,6 +20,7 @@ public class CompilationMapper {
     }
 
     public CompilationDto toCompilationDto(Compilation compilation, List<EventShortDto> events) {
+    public static CompilationDto toCompilationDto(Compilation compilation, List<EventShortDto> events) {
         return CompilationDto.builder()
                 .id(compilation.getId())
                 .pinned(compilation.getPinned())

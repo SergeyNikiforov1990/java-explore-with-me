@@ -9,6 +9,7 @@ import ru.practicum.model.ViewStats;
 @UtilityClass
 public class StatsMapper {
     public StatsModel toStats(HitRequestDto endpointHitRequestDto) {
+    public static StatsModel toStats(HitRequestDto endpointHitRequestDto) {
         return StatsModel.builder()
                 .ip(endpointHitRequestDto.getIp())
                 .timestamp(endpointHitRequestDto.getTimestamp())
@@ -18,6 +19,7 @@ public class StatsMapper {
     }
 
     public StatsResponseDto toStatsResponseDto(ViewStats viewStats) {
+    public static StatsResponseDto toStatsResponseDto(ViewStats viewStats) {
         return StatsResponseDto.builder()
                 .app(viewStats.getApp())
                 .uri(viewStats.getUri())

@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.practicum.main_service.event.model.StateAction;
 import ru.practicum.main_service.locations.dto.LocationDto;
-
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -32,6 +31,4 @@ public class UpdateEventRequestDto {
     private StateAction stateAction;
     @Size(min = 3, max = 120)
     private String title;
-
-
 }
