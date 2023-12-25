@@ -1,3 +1,4 @@
+https://github.com/SergeyNikiforov1990/java-explore-with-me/actions/runs/7324071414/job/19947302072?pr=3
 ## ExploreWithMe
 Приложение ExploreWithMe - афиша, которая позволяет пользователям делиться информацией об интересных событиях и находить компанию для участия в них.
 
