@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 @UtilityClass
 public class RequestMapper {
     public ParticipationRequestDto toRequestDto(Request request) {
+    public static ParticipationRequestDto toRequestDto(Request request) {
         return ParticipationRequestDto.builder()
                 .id(request.getId())
                 .created(request.getCreated())
@@ -18,8 +19,8 @@ public class RequestMapper {
                 .event(request.getEvent().getId())
                 .build();
     }
-
     public EventRequestStatusUpdateResult toUpdateResultDto(
+    public static EventRequestStatusUpdateResult toUpdateResultDto(
             List<Request> confirmedRequests,
             List<Request> rejectedRequests
     ) {

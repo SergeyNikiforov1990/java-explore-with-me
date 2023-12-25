@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.practicum.main_service.users.dto.NewUserRequestDto;
 import ru.practicum.main_service.users.dto.UserDto;
 import ru.practicum.main_service.users.service.UserService;
-
 import javax.validation.Valid;
 import javax.validation.constraints.PositiveOrZero;
 import java.util.List;

@@ -34,6 +34,4 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             @Param("radius") Float radius,
             State state,
             Pageable pageable);
-
-
 }
