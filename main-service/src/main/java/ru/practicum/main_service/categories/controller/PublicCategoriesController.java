@@ -10,7 +10,6 @@ import ru.practicum.main_service.categories.service.CategoriesService;
 import javax.validation.constraints.PositiveOrZero;
 import java.util.List;
 
-
 @Validated
 @RestController
 @Slf4j

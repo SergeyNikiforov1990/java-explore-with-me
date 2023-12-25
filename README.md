@@ -1,4 +1,3 @@
-
 ## ExploreWithMe
 Приложение ExploreWithMe - афиша, которая позволяет пользователям делиться информацией об интересных событиях и находить компанию для участия в них.
 
@@ -68,8 +67,3 @@
 
 ![](schema.png)
 ссылка на диаграмму - https://dbdiagram.io/d/64f70baa02bd1c4a5efe21fb
-=======
-# java-explore-with-me
-Template repository for ExploreWithMe project.
-
-https://dbdiagram.io/d/64d4c0cf02bd1c4a5e8fcad2

@@ -12,7 +12,6 @@ import ru.practicum.main_service.categories.repository.CategoriesRepository;
 import ru.practicum.main_service.event.dto.*;
 import ru.practicum.main_service.event.dto.mapper.EventMapper;
 import ru.practicum.main_service.event.model.Event;
-import ru.practicum.main_service.event.model.Location;
 import ru.practicum.main_service.event.model.SortEvents;
 import ru.practicum.main_service.event.model.State;
 import ru.practicum.main_service.event.repository.CustomBuiltEventRepository;
@@ -22,9 +21,6 @@ import ru.practicum.main_service.exception.ObjectNotFoundException;
 import ru.practicum.main_service.locations.LocationRepository;
 import ru.practicum.main_service.locations.dto.LocationDto;
 import ru.practicum.main_service.locations.model.Location;
-import ru.practicum.main_service.event.repository.LocationRepository;
-import ru.practicum.main_service.exception.ConflictException;
-import ru.practicum.main_service.exception.ObjectNotFoundException;
 import ru.practicum.main_service.request.RequestRepository;
 import ru.practicum.main_service.request.dto.ParticipationRequestDto;
 import ru.practicum.main_service.request.dto.RequestMapper;
@@ -143,7 +139,6 @@ public class EventServiceImpl implements EventService {
         }
         User user = getUser(userId);
         Location location = getLocation(newEventDto.getLocation());
-        locationRepository.save(location);
         Categories categories = getCategoriesIfExist(newEventDto.getCategory());
         Event event = EventMapper.toEvent(newEventDto, categories, location, user);
         event.setConfirmedRequests(0L);
@@ -354,7 +349,6 @@ public class EventServiceImpl implements EventService {
 
     }
 
-
     private void updateEvents(Event event, UpdateEventRequestDto requestDto) {
         if (requestDto.getAnnotation() != null) {
             event.setAnnotation(requestDto.getAnnotation());
@@ -390,9 +384,9 @@ public class EventServiceImpl implements EventService {
     }
 
     private Location getLocation(LocationDto locationDto) {
+
         Optional<Location> location = locationRepository.findByLatAndLonAndNameNull(
                 locationDto.getLat(), locationDto.getLon());
-        Optional<Location> location = locationRepository.findByLatAndLon(locationDto.getLat(), locationDto.getLon());
 
         Location savedLocation;
         if (location.isPresent()) {

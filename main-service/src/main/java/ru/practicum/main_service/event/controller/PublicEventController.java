@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
 @Validated
 @RestController
 @Slf4j
@@ -76,4 +75,5 @@ public class PublicEventController {
                 locationId, lat, lon, radius, from, size);
         return result;
     }
+
 }

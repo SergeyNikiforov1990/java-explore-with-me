@@ -23,7 +23,6 @@ public class AdminCategoriesController {
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryDto createCategories(@RequestBody @Valid NewCategoryDto newCategoryDto) {
         return categoriesService.createCategories(newCategoryDto);
-
     }
 
     @DeleteMapping("/{catId}")
